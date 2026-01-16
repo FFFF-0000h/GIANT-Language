@@ -1,0 +1,368 @@
+(* ============================================================================ *)
+(* YHWH LANGUAGE SPECIFICATION v1.0                                          *)
+(* Nigerian Pidgin English + YorubaNumeralSystem Relational Paradigm        *)
+(* Genesis 1:1 - "In the beginning was the Word... and the Word had meaning" *)
+(* ============================================================================ *)
+
+(* Main Program Structure *)
+program = { statement } EOF ;
+
+statement = pidgin_statement 
+          | relational_statement 
+          | comment ;
+
+(* ============================================================================ *)
+(* PIDGIN ENGLISH SYNTAX - Traditional Programming Constructs                *)
+(* ============================================================================ *)
+
+pidgin_statement = variable_assignment
+                 | print_statement
+                 | expression_statement ;
+
+(* Variable Assignment - Three flavors *)
+variable_assignment = "make" identifier "be" expression
+                    | "set" identifier "to" expression
+                    | "let" identifier "be" ("equal" "to" | "equal") expression ;
+
+(* Print Output *)
+print_statement = "talk" expression ;
+
+(* Conditionals - Pidgin style *)
+conditional_statement = "suppose" condition ":" statement_block
+                       [ "den" ":" statement_block ] ;
+============================================================================ *)
+(* PIDGIN EXPRESSIONS - Arithmetic and Logic                                 *)
+(* ============================================================================ *)
+
+expression = logical_or ;
+
+logical_or = logical_and { "or" logical_and } ;
+
+logical_and = logical_not { "and" logical_not } ;
+
+logical_not = "not" logical_not | comparison ;
+
+comparison = additive [ comparison_operator additive ] ;
+
+comparison_operator = "equal" 
+                    | "pass"        (* greater than *)
+                    | "less"        (* less than *)
+                    | "==" 
+                    | "!=" 
+                    | ">" 
+                    | "<" 
+                    | ">=" 
+                    | "<=" ;
+
+additive = multiplicative { additive_operator multiplicative } ;
+
+additive_operator = "plus" | "minus" | "+" | "-" ;
+
+multiplicative = power { multiplicative_operator power} ;
+
+multiplicative_operator = "times" | "divided by" | "*" | "/" ;
+
+power = unary { ("power" | "raised to" | "**") unary } ;
+
+unary = ("-" | "square root of" | "cube root of") unary | primary ;
+
+primary = number
+        | string_literal
+        | boolean_literal
+        | identifier
+        | "(" expression ")" ;
+
+(* ============================================================================ *)
+(* YorubaNumeralSystem RELATIONAL PROGRAMMING SYNTAX                        *)
+(* ============================================================================ *)
+
+relational_statement = anchor_declaration
+                     | relational_variable_declaration
+                     | when_statement
+                     | optimization_directive ;
+
+(* ----------------------------------------------------------------------------
+   ANCHORS: Numbers with Passports (Meaningful Reference Points)
+   ---------------------------------------------------------------------------- *)
+
+anchor_declaration = "@anchor" identifier "=" expression
+                    [ anchor_properties ] ;
+
+(* Note: Currently only simple properties on same line as anchor declaration *)
+anchor_properties = { anchor_property } ;
+
+anchor_property = identifier "=" literal_value ;
+
+(* ----------------------------------------------------------------------------
+   RELATIONAL VARIABLESanchor_management_command
+   ---------------------------------------------------------------------------- *)
+
+relational_variable_declaration = "relational" identifier "=" expression
+                                 "relative" "to" anchor_list ;
+
+(* Alternative tokenization: "relative to" may be a single operator *)
+(* The lexer creates Operator('relative_to') for the phrase "relative to" *)
+
+anchor_list = "[" anchor_reference { "," anchor_reference } "]" ;
+
+anchor_reference = identifier ;
+
+(* ----------------------------------------------------------------------------
+   WHEN-CLAUSES: Context-Aware Conditional Logic
+   ---------------------------------------------------------------------------- *)
+
+when_statement = "when" relational_condition ":" action_block ;
+
+relational_condition = expression relational_operator expression
+                     | expression "is" qualifier expression
+                     | expression ;
+
+relational_operator = "approaches"
+                    | "enters"
+                    | "leaves"
+                    | "crosses"
+                    | "trending" ;
+
+qualifier = string_literal ;  (* "over", "under", "near", "approximately", etc. *)
+ANCHOR MANAGEMENT COMMANDS
+   ---------------------------------------------------------------------------- *)
+
+anchor_management_command = list_anchors_command | describe_anchor_command ;
+
+list_anchors_command = "list" ("anchor" | "anchors") ;
+
+describe_anchor_command = ("describe" | "show" | "inspect") "anchor" identifier ;
+
+(* ------------------------------- ;
+
+qualifier = string_literal ;  (* "over", "under", "near", etc. *)
+
+action_block = action_directive statement ;
+
+action_directive = "@action"
+literal_value = number 
+              | string_literal 
+              | boolean_literal ;
+
+number = integer | float ;
+
+integer = digit { digit } ;
+
+(* Note: Current implementation may have limitations with float parsing *)
+float = digit { digit } "." digit { digit } ;
+
+string_literal = '"' { string_character } '"' 
+               | "'" { string_character } "'" ;
+
+boolean_literal = "true" | "false" | "True" | "False" ;
+
+(* Identifiers *)
+identifier = ( letter | "_" ) { letter | digit | "_" } ;
+
+(* ============================================================================ *)
+(* SPECIAL SYNTAX ELEMENTS                                                   *)
+(* ============================================================================ *)
+
+(* The @ symbol is used as a prefix for YorubaNumeralSystem constructs *)
+at_symbol = "@" ;
+
+(* Multi-word operators that are tokenized as single operators *)
+multi_word_operator = "relative to"      (* → relative_to *)
+                    | "bouncing from"    (* → bouncing_from *)
+                    | "away from"        (* → away_from *)
+                    | "trending toward"  (* → trending_toward *)
+                    | "trending upward"  (* → trending_upward *)
+                    | "trending downward" ; (* → trending_downward *)
+
+(* Relational qualifiers used with "is" operator *)
+relational_qualifier_keyword = "over"
+                             | "under"
+                             | "near"
+                             | "equal_to"
+                             | "approximately"
+                             | "within"
+                             | "above"
+                             | "below"
+                       divided by"       (* → divided_by *)
+                    | "square root of"   (* → sqrt *)
+                    | "cube root of" ;   (* → cbrt            *)
+(* ============================================================================ *)
+
+(* Pidgin Keywords *)
+pidgin_keyword = "make" | "set" | "let" | "be" | "to" 
+               | "talk" | "show"
+               | "stop"
+               | "equal" | "pass" | "less"
+               | "plus" | "minus" | "times" | "divide" | "power"
+               | "and" | "or" | "not" ;
+
+(* YorubaNumeralSystem/Relational Keywords *)
+relational_keyword = "anchor" | "relational" | "when" | "relative"
+                   | "action" | "list" | "describe"
+                   | "optimize" | "is" | "context" ;
+
+(* ============================================================================ *)
+(* OPERATORS                                                                  *)
+(* ============================================================================ *)
+
+
+arithmetic_operator = "+" | "-" | "*" | "/" | "%" | "**"
+                    | "plus" | "minus" | "times" | "divide" | "modulo" | "power" ;
+
+assignment_operator = "=" ;
+
+(* Relational operators specific to YorubaNumeralSystem *)
+yns_operator = "approaches" | "enters" | "leaves" | "crosses"
+             | "trending" | "relative_to" | "bouncing_from"
+                 | "away_from" | "trending_toward" ;
+
+(* ============================================================================ *)
+(* LEXICAL ELEMENTS                                                           *)
+(* ============================================================================ *)
+
+letter = "a".."z" | "A".."Z" ;
+**"
+                    | "plus" | "minus" | "times" | "divided by" | "power" 
+                    | "square root of" | "cube root of
+
+string_character = any_character_except_quote_and_newline ;
+
+newline = "\n" | "\r\n" | "\r" ;relative_to
+
+(* Indentation-based blocks (Python-style) *)
+INDENT = increase_indentation ;
+DEDENT = decrease_indentation ;
+
+EOF = end_of_file ;
+
+(* ============================================================================ *)
+(* COMMENTS                                                                   *)
+(* ============================================================================ *)
+
+comment = line_comment | block_comment ;
+
+line_comment = "*sidegist" { any_character } newline ;
+
+block_comment = "*omo*" { any_character } "*omo*" ;
+
+(* ============================================================================ *)
+(* IMPLEMENTATION NOTES                                                       *)
+(* ============================================================================ *)
+
+(*
+  IMPLEMENTED FEATURES:
+  
+  PIDGIN SYNTAX:
+     - Variable assignment: make, set, let
+     - Print: talk
+     - Arithmetic: plus, minus, times, divide, power
+     - Multi-word operators: divided by, square root of, cube root of
+     - Comparison: equal, pass, less
+     - Logical: and, or, not
+     - Break: stop
+  
+  YorubaNumeralSystem CORE:
+     - Anchor declarations: @anchor name = value [properties]
+     - Anchor properties: unit, tolerance, description
+     - YorubaNumeralSystem-style anchors: @anchor(name="x", value=100, ...)
+     - Relational variables: relational var = value relative to [anchors]
+     - When-clauses: when condition: @action statement
+     - Relational operators: is "over"/"under"/"near", approaches
+     - Action directives: @action
+     - Anchor management: list anchors, describe anchor NAME
+     - Comments: *sidegist (single-line), *omo* ... *omo* (multi-line)
+  
+  ARCHITECTURE:
+     - lexer.py - tokenizes both Pidgin and YorubaNumeralSystem
+     - parser.py - builds AST for both paradigms
+     - interpreter.py - executes both paradigms
+     - YorubaNumeralSystem runtime in core/ directory (anchors, relations, context, optimizer)
+     - All AST nodes in relational/ast_nodes.py
+  
+  DESIGN PRINCIPLES:
+     - Zero code duplication
+     - Single source of truth for each component
+     - Graceful degradation if YorubaNumeralSystem runtime unavailable
+     - 100% backward compatible with Pidgin syntax
+*)
+
+(* ============================================================================ *)
+(* SEMANTIC RULES                                                             *)
+(* ============================================================================ *)
+
+(*
+  ANCHOR SEMANTICS:
+    - Anchors are meaningful reference points with domain knowledge
+    - They carry tolerance zones, units, context, significance
+    - They persist in the execution context
+    - Multiple variables can reference the same anchor
+  
+  RELATIONAL VARIABLE SEMANTICS:
+    - Relational variables know their position relative to anchors
+    - They auto-compute distances and significance
+    - Example: temp=78 relative to [optimal=75] knows it's "3 over optimal"
+  
+  WHEN-CLAUSE SEMANTICS:
+    - Evaluated continuously or on value changes
+    - "approaches" considers tolerance zones, not just raw distance
+    - "is over/under" are straightforward comparisons with meaning
+    - Actions have priorities and explanations
+  
+  HYBRID PROGRAMMING:
+    - Pidgin and YorubaNumeralSystem can be mixed in the same program
+    - Regular variables and relational variables coexist
+    - Control flow can use both paradigms
+*)
+
+(* ============================================================================ *)
+(* EXAMPLES                                                                   *)
+(* ============================================================================ *)
+
+(*
+  EXAMPLE 1: Pure Pidgin
+  ----------------------
+  make x be 10
+  set y to 5
+  talk x plus y
+  
+  
+  EXAMPLE 2: Pure YorubaNumeralSystem
+  ------------------------------------
+  @anchor optimal_temp = 75
+  relational current_temp = 78 relative to [optimal_temp]
+  
+  when current_temp is "over" optimal_temp:
+      talk "Temperature above optimal"
+  
+  
+  EXAMPLE 3: Hybrid Programming
+  ------------------------------
+  make count be 0
+  @anchor target = 10
+  relational progress = 0 relative to [target]
+  
+  repeat while count less target:
+      set count to count plus 1
+      when progress approaches target:
+          talk "Almost there!"
+  
+  
+  EXAMPLE 4: Reactor Monitoring (Real-World YorubaNumeralSystem)
+  ---------------------------------------------------------------
+  @anchor melting_point = 1510
+  @anchor optimal_operating = 75
+  @anchor danger_threshold = 100
+  
+  relational reactor_temp = 92 relative to [optimal_operating, danger_threshold]
+  
+  when reactor_temp is "over" optimal_operating:
+      talk "Operating above optimal efficiency"
+  
+  when reactor_temp approaches danger_threshold:
+      @action talk "WARNING: Approaching critical zone"
+      @priority high
+*)
+
+(* ============================================================================ *)
+(* END OF SPECIFICATION                                                       *)
+(* ============================================================================ *)

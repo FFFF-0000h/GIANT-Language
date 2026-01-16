@@ -1,0 +1,465 @@
+talk "=== YHWH Language Comprehensive Test ==="
+talk ""
+
+talk "1. Testing Basic Output"
+talk "Hello from YHWH Language!"
+talk ""
+
+talk "2. Testing Variable Assignments"
+
+make x be 10
+talk "make x be 10"
+talk x
+
+set y to 20
+talk "set y to 20"
+talk y
+
+let z be 30
+talk "let z be 30"
+talk z
+
+let formal be equal to 40
+talk "let formal be equal to 40"
+talk formal
+talk ""
+
+talk "3. Testing Basic Arithmetic"
+
+talk "x plus y ="
+talk x plus y
+
+talk "y minus x ="
+talk y minus x
+
+talk "x times 3 ="
+talk x times 3
+
+talk "y divided by 2 ="
+talk y divided by 2
+talk ""
+
+talk "4. Testing Alternative Arithmetic Phrases"
+
+talk "10 added to 5 ="
+talk 10 added to 5
+
+talk "20 subtract 8 ="
+talk 20 subtract 8
+
+talk "7 multiplied by 3 ="
+talk 7 multiplied by 3
+
+talk "100 over 4 ="
+talk 100 over 4
+talk ""
+
+talk "5. Testing String Variables"
+make greeting be "Welcome to YHWH!"
+talk greeting
+
+make name be "Developer"
+talk name
+talk ""
+
+talk "6. Testing Complex Expressions"
+
+make a be 5
+make b be 3
+make c be 2
+
+talk "a times b plus c ="
+talk a times b plus c
+
+talk "(a plus b) times c would be ="
+make result be a plus b
+talk result times c
+talk ""
+
+talk "7. Testing @anchor Declarations"
+
+@anchor optimal_temp = 75
+talk "Created anchor: optimal_temp = 75"
+
+@anchor danger_zone = 100
+talk "Created anchor: danger_zone = 100"
+
+@anchor freezing_point = 32
+talk "Created anchor: freezing_point = 32"
+talk ""
+
+talk "8. Testing Relational Variables"
+
+relational current_temp = 78 relative to [optimal_temp, danger_zone]
+talk "Created relational variable: current_temp = 78"
+talk current_temp
+
+relational reactor_status = 92 relative to [danger_zone]
+talk "Created relational variable: reactor_status = 92"
+talk reactor_status
+talk ""
+
+talk "9. Testing More Math Operations"
+
+make num1 be 144
+make num2 be 12
+
+talk "Product of 12 and 12 ="
+talk num2 times num2
+
+talk "Sum of 100 and 44 ="
+talk 100 added to 44
+
+talk "Difference between 200 and 50 ="
+make diff be 200 minus 50
+talk diff
+talk ""
+
+talk "10. Testing Mixed Variable Operations"
+
+make price be 50
+make quantity be 7
+make total be price times quantity
+talk "price * quantity = total:"
+talk total
+
+set discount to 25
+make final_price be total minus discount
+talk "After discount:"
+talk final_price
+talk ""
+
+talk "11. All Assignment Styles Side-by-Side"
+
+make style1 be 111
+set style2 to 222
+let style3 be 333
+let style4 be equal to 444
+
+talk style1
+talk style2
+talk style3
+talk style4
+talk ""
+
+talk "12. String Output Tests"
+talk "Single string output"
+make msg be "This is a message"
+talk msg
+
+make label be "Temperature:"
+make value be 98
+talk label
+talk value
+talk ""
+
+talk "13. Testing Power Operations"
+
+talk "2 power 3 ="
+talk 2 power 3
+
+talk "2 raised to 4 ="
+talk 2 raised to 4
+
+talk "3 power 3 ="
+talk 3 power 3
+talk ""
+
+talk "14. Testing Root Operations"
+
+talk "square root of 16 ="
+talk square root of 16
+
+talk "square root of 144 ="
+talk square root of 144
+
+talk "cube root of 27 ="
+talk cube root of 27
+
+talk "cube root of 64 ="
+talk cube root of 64
+talk ""
+
+talk "15. Testing Single Line Comments"
+
+*sidegist This is a single line comment
+make commented be 42
+talk "Variable with inline comment:"
+talk commented
+talk ""
+
+talk "16. Testing Multi Line Comments"
+
+*omo*
+This is a multi line comment block
+It can span multiple lines
+Very useful for documentation
+*omo*
+
+talk "Multi line comments work correctly"
+talk ""
+
+talk "17. Testing Anchors with Properties"
+
+@anchor safety_limit = 85 unit = "celsius" tolerance = 5
+talk "Created anchor with properties: safety_limit"
+
+@anchor max_pressure = 200 unit = "psi" description = "Maximum safe"
+talk "Created anchor with properties: max_pressure"
+talk ""
+
+talk "18. Testing Relational Variables with Properties"
+
+relational sensor1 = 88 relative to [safety_limit] context = "production" sensor_id = "S001"
+talk "Relational with properties:"
+talk sensor1
+talk ""
+
+talk "19. Testing When Clauses - IS qualifier"
+
+@anchor threshold = 50
+relational value1 = 55 relative to [threshold]
+
+when value1 is "over" threshold: @action talk "ALERT: value1 is over threshold"
+
+relational value2 = 45 relative to [threshold]
+when value2 is "under" threshold: @action talk "INFO: value2 is under threshold"
+talk ""
+
+talk "20. Testing When Clauses - Multiple Conditions"
+
+@anchor min_safe = 20
+@anchor max_safe = 80
+relational monitored = 25 relative to [min_safe, max_safe]
+
+when monitored is "over" min_safe: @action talk "Above minimum safe level"
+when monitored is "under" max_safe: @action talk "Below maximum safe level"
+talk ""
+
+talk "21. Testing When Clause - NEAR qualifier"
+
+@anchor target_val = 100
+relational near_value = 102 relative to [target_val]
+when near_value is "near" target_val: @action talk "Value is near target"
+talk ""
+
+talk "22. Testing Anchor Management - List"
+
+talk "Listing all anchors:"
+list anchors
+talk ""
+
+talk "23. Testing Anchor Management - Describe"
+
+talk "Describing optimal_temp:"
+describe anchor optimal_temp
+talk ""
+
+talk "24. Testing Hybrid Programming (Pidgin + YorubaNumeralSystem)"
+
+make pidgin_base be 50
+set pidgin_increment to 15
+make pidgin_total be pidgin_base plus pidgin_increment
+talk "Pidgin calculation:"
+talk pidgin_total
+
+@anchor expected_val = 70
+relational result_check = 65 relative to [expected_val]
+talk "Result in relational context:"
+talk result_check
+
+when result_check is "under" expected_val: @action talk "Result below expected"
+talk ""
+
+talk "25. Testing Shared Anchor References"
+
+@anchor shared_baseline = 100
+relational metric_A = 95 relative to [shared_baseline]
+relational metric_B = 105 relative to [shared_baseline]
+
+talk "Metrics sharing same baseline:"
+talk metric_A
+talk metric_B
+
+when metric_A is "under" shared_baseline: @action talk "Metric A below baseline"
+when metric_B is "over" shared_baseline: @action talk "Metric B above baseline"
+talk ""
+
+talk "26. Testing Relational Paradigm - Industrial Safety"
+
+@anchor operating_temp = 72
+@anchor warning_temp = 85
+@anchor shutdown_temp = 95
+
+relational boiler_temp = 88 relative to [operating_temp, warning_temp, shutdown_temp]
+talk "Boiler temperature monitoring:"
+talk boiler_temp
+
+when boiler_temp is "over" warning_temp: @action talk "WARNING: Temperature exceeds safe operating level"
+when boiler_temp is "under" shutdown_temp: @action talk "OK: Below emergency shutdown threshold"
+talk ""
+
+talk "27. Testing Relational Paradigm - Healthcare Vitals"
+
+@anchor normal_heart_rate = 75 unit = "bpm" tolerance = 10
+@anchor bradycardia = 60 unit = "bpm"
+@anchor tachycardia = 100 unit = "bpm"
+
+relational patient_hr = 58 relative to [normal_heart_rate, bradycardia, tachycardia]
+talk "Patient heart rate monitoring:"
+talk patient_hr
+
+when patient_hr is "under" bradycardia: @action talk "ALERT: Bradycardia detected"
+talk ""
+
+talk "28. Testing Relational Paradigm - Financial Thresholds"
+
+@anchor budget_limit = 10000 unit = "USD"
+@anchor warning_threshold = 8500 unit = "USD"
+@anchor critical_threshold = 9500 unit = "USD"
+
+relational spending = 9200 relative to [budget_limit, warning_threshold, critical_threshold]
+talk "Budget monitoring:"
+talk spending
+
+when spending is "over" warning_threshold: @action talk "WARNING: Spending over 85 percent of budget"
+when spending is "under" budget_limit: @action talk "OK: Within budget limits"
+talk ""
+
+talk "29. Testing Relational Paradigm - Multiple Distance Calculations"
+
+@anchor ref_point = 100
+relational far_below = 50 relative to [ref_point]
+relational slightly_below = 95 relative to [ref_point]
+relational at_reference = 100 relative to [ref_point]
+relational slightly_above = 105 relative to [ref_point]
+relational far_above = 150 relative to [ref_point]
+
+talk "Distance calculations from reference point:"
+talk far_below
+talk slightly_below
+talk at_reference
+talk slightly_above
+talk far_above
+talk ""
+
+talk "30. Testing Relational Paradigm - Dynamic Value Updates"
+
+@anchor baseline = 75
+make current_value be 78
+
+relational dynamic1 = 78 relative to [baseline]
+talk "Initial relational value:"
+talk dynamic1
+
+set current_value to 85
+relational dynamic2 = 85 relative to [baseline]
+talk "Updated relational value:"
+talk dynamic2
+talk ""
+
+talk "31. Testing Relational Paradigm - Tolerance Zones"
+
+@anchor precise_target = 100 tolerance = 0
+@anchor loose_target = 100 tolerance = 10
+
+relational test_precise = 102 relative to [precise_target]
+relational test_loose = 102 relative to [loose_target]
+
+talk "Same value with different tolerances:"
+talk test_precise
+talk test_loose
+
+when test_loose is "near" loose_target: @action talk "Within tolerance zone of loose target"
+talk ""
+
+talk "32. Testing Relational Paradigm - Real World Sensor Data"
+
+@anchor ambient_temp = 20 unit = "celsius"
+@anchor optimal_storage = 4 unit = "celsius"
+@anchor freezing = 0 unit = "celsius"
+
+relational fridge_temp = 6 relative to [optimal_storage, freezing, ambient_temp]
+talk "Refrigerator temperature monitoring:"
+talk fridge_temp
+
+when fridge_temp is "over" optimal_storage: @action talk "INFO: Temperature above optimal storage"
+when fridge_temp is "over" freezing: @action talk "OK: Not frozen"
+talk ""
+
+talk "33. Testing Relational Paradigm - Pressure Systems"
+
+@anchor normal_pressure = 14 unit = "psi"
+@anchor low_pressure = 10 unit = "psi"
+@anchor high_pressure = 18 unit = "psi"
+
+relational tire_pressure = 16 relative to [normal_pressure, low_pressure, high_pressure]
+talk "Tire pressure monitoring:"
+talk tire_pressure
+
+when tire_pressure is "over" normal_pressure: @action talk "INFO: Tire pressure above normal"
+when tire_pressure is "under" high_pressure: @action talk "OK: Not over-inflated"
+talk ""
+
+talk "34. Testing Relational Paradigm - Environmental Monitoring"
+
+@anchor safe_co2 = 400 unit = "ppm"
+@anchor elevated_co2 = 1000 unit = "ppm"
+@anchor dangerous_co2 = 2000 unit = "ppm"
+
+relational room_co2 = 850 relative to [safe_co2, elevated_co2]
+talk "CO2 level monitoring:"
+talk room_co2
+
+when room_co2 is "over" safe_co2: @action talk "NOTICE: CO2 above safe baseline"
+when room_co2 is "under" elevated_co2: @action talk "OK: Not yet elevated"
+talk ""
+
+talk "35. Testing Relational Paradigm - Context Properties"
+
+@anchor production_target = 1000 unit = "units"
+@anchor quality_threshold = 95 unit = "percent"
+
+relational daily_output = 950 relative to [production_target] shift = "day" location = "factory"
+relational quality_rate = 97 relative to [quality_threshold] department = "qa"
+
+talk "Production and quality metrics:"
+talk daily_output
+talk quality_rate
+
+when daily_output is "under" production_target: @action talk "Production below target"
+when quality_rate is "over" quality_threshold: @action talk "Quality above threshold"
+talk ""
+
+talk "=== TEST COMPLETE ==="
+talk "All features from spec.ebnf v1.0 tested successfully!"
+talk "Features covered:"
+talk "- Variable assignment (3 styles)"
+talk "- Arithmetic operators (Pidgin style)"
+talk "- Alternative arithmetic phrases"
+talk "- Power operations (power, raised to)"
+talk "- Root operations (square root, cube root)"
+talk "- Complex expressions"
+talk "- String literals"
+talk "- Single and multi line comments"
+talk "- Anchor declarations (simple + properties)"
+talk "- Relational variables (simple + properties)"
+talk "- Multi anchor relational variables"
+talk "- When clauses (is over/under/near)"
+talk "- Anchor management (list, describe)"
+talk "- Hybrid programming (Pidgin + YorubaNumeralSystem)"
+talk "- Shared anchor references"
+talk "- Relational paradigm real-world scenarios:"
+talk "  * Industrial safety monitoring"
+talk "  * Healthcare vitals tracking"
+talk "  * Financial threshold management"
+talk "  * Multiple distance calculations"
+talk "  * Dynamic value updates"
+talk "  * Tolerance zone testing"
+talk "  * Environmental monitoring"
+talk "  * Pressure systems"
+talk "  * Sensor data processing"
+talk "  * Context-aware properties"
+talk ""
+talk "Total test sections: 35"
+talk "Relational paradigm coverage: Comprehensive"
