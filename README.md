@@ -8,7 +8,7 @@ A relational programming language rooted in Nigerian Indigenous mathematical phi
 
 ## Overview
 
-YHWH-GIANT (pronounced "YAH-wah GIANT") is a programming paradigm that fundamentally reframes how we think about numbers and computation—from absolute quantities to contextual relationships.
+YHWH-GIANT (pronounced "Giant"; YHWH comments out as it is unpronuncable) is a programming paradigm that fundamentally reframes how we think about numbers and computation—from absolute quantities to contextual relationships.
 
 ### The Paradigm Shift
 
