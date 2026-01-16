@@ -405,7 +405,9 @@ YHWH-GIANT is being prepared for open-source release. Contributions will be welc
 
 ## License
 
-(License information to be added before public release)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2026 Itunuayo Adebiyi
 
 ---
 
