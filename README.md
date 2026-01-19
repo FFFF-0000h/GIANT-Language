@@ -18,7 +18,7 @@ temperature = 92
 if temperature > 100:
     print("Danger!")
 ```
-The code knows `92 < 100` but understands nothing about what this relationship *means*.
+The code *knows* `92 < 100` but *understands* nothing about what this relationship *means*.
 
 **GIANT (Relational):**
 ```naija
