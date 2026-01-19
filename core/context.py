@@ -1,5 +1,5 @@
 """
-YHWH Language - Relational Context Manager
+GIANT Language - Relational Context Manager
 Genesis 1:1 - In the beginning...
 
 Manages anchors, relations, and execution context for relational programs.

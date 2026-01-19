@@ -1,5 +1,5 @@
 """
-YHWH Language - Anchor Implementation
+GIANT Language - Anchor Implementation
 Genesis 1:1 - In the beginning...
 
 Anchors are first-class reference points that give meaning to values.

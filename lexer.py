@@ -7,7 +7,7 @@ from syntax_loader import SyntaxLoader
 
 
 class Lexer:
-    """Tokenizer for YHWH Language source code."""
+    """Tokenizer for GIANT Language source code."""
     
     def __init__(self, text: str, syntax_loader: SyntaxLoader) -> None:
         self.text = text

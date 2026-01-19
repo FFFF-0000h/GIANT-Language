@@ -18,7 +18,7 @@ from math_operations import MathOperations
 
 class Parser:
     """
-    Recursive descent parser for YHWH Language (Nigerian Pidgin + YorubaNumeralSystem).
+    Recursive descent parser for GIANT Language (Nigerian Pidgin + YorubaNumeralSystem).
     
     Builds AST from token stream with support for:
     - Variable assignments (make/set syntax)

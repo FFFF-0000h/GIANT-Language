@@ -1,5 +1,5 @@
 """
-YHWH Language - Relation Implementation
+GIANT Language - Relation Implementation
 Genesis 1:1 - In the beginning...
 
 Relations are values that know their position relative to anchors.

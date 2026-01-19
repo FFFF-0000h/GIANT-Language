@@ -127,7 +127,7 @@ from .ast_nodes import (
 # ============================================================================
 
 __version__ = '0.1.0'
-__author__ = 'YHWH Language Team'
+__author__ = 'GIANT Language Team'
 __status__ = 'Phase 2A Complete - AST Nodes'
 
 # ============================================================================

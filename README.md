@@ -53,15 +53,15 @@ The variable *knows* its semantic position—not just numeric distance, but *mea
 
 ```bash
 # Clone the repository
-git clone https://github.com/FFFF-0000h/YHWH-Language.git
-cd YHWH-Language
+git clone https://github.com/FFFF-0000h/GIANT-Language.git
+cd GIANT-Language
 
 # Optional: Create virtual environment
 python3 -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
-### Running YHWH-GIANT
+### Running GIANT
 
 **Interactive REPL:**
 ```bash
@@ -83,7 +83,7 @@ python main.py misc/spec_test.naija
 Create `hello.naija`:
 ```naija
 *sidegist* This is a comment in Nigerian Pidgin
-talk "Hello from YHWH-GIANT!"
+talk "Hello from GIANT!"
 
 make name be "World"
 talk "Welcome" 
@@ -234,8 +234,8 @@ python main.py
 ```
 
 ```naija
->>> talk "Testing YHWH-GIANT"
-Testing YHWH-GIANT
+>>> talk "Testing GIANT"
+Testing GIANT
 
 >>> make x be 10
 >>> talk x
@@ -324,7 +324,7 @@ describe anchor normal_hr
 
 ## The Philosophy: Yoruba Mathematical Foundations
 
-YHWH-GIANT is inspired by the Yoruba numeral system of southwestern Nigeria, which naturally encodes relational thinking.
+GIANT is inspired by the Yoruba numeral system of southwestern Nigeria, which naturally encodes relational thinking.
 
 **Example:** The Yoruba word for 17 is *mẹ́tàdínlógún*, literally meaning "three taken from twenty" (20 - 3).
 
@@ -335,14 +335,14 @@ This isn't just linguistic—it's a **computational paradigm**:
 
 **Read more:**
 - `misc/YorubaNumeralSystem` - Cultural and mathematical context
-- `misc/YHWH-GIANT_Paper.pdf` - Complete research paper (25 pages)
+- `misc/GIANT_Paper.pdf` - Complete research paper (25 pages)
 - `misc/RELATIONAL_PARADIGM_ANALYSIS.md` - Paradigm analysis
 
 ---
 
 ## Name Etymology
 
-**YHWH**: The Tetragrammaton, the unpronounceable name of God in Hebrew tradition. Like the divine name that "comments out" from ordinary speech, YHWH-GIANT transcends conventional programming paradigms.
+**GIANT**: **G**eneralized **I**ntelligent **A**nchor-Based **N**otation for **T**olerance-aware computation. A programming paradigm that transcends conventional value-based thinking.
 
 **GIANT**: 
 - **Acronym**: Generalized Intelligent Anchor-based Notation & Types
@@ -355,15 +355,15 @@ This isn't just linguistic—it's a **computational paradigm**:
 - **`misc/Tutorial.md`** - Complete language tutorial with examples
 - **`misc/spec_test.naija`** - Comprehensive test suite (35 test sections)
 - **`misc/spec.ebnf`** - Formal EBNF grammar
-- **`misc/YHWH-GIANT_Paper.pdf`** - Academic research paper (25 pages)
-- **`misc/YHWH-GIANT_Glossary.md`** - Technical glossary (100+ terms)
+- **`misc/GIANT_Paper.pdf`** - Academic research paper (25 pages)
+- **`misc/GIANT_Glossary.md`** - Technical glossary (100+ terms)
 - **`misc/RELATIONAL_PARADIGM_ANALYSIS.md`** - Paradigm deep-dive
 
 ---
 
 ## Contributing
 
-YHWH-GIANT is being prepared for open-source release. Contributions will be welcome in areas such as:
+GIANT is being prepared for open-source release. Contributions will be welcome in areas such as:
 
 - Additional language features (loops, functions, conditionals)
 - Performance optimizations
@@ -428,4 +428,4 @@ This work honors:
 
 ---
 
-**YHWH-GIANT: Where culture meets computation, and numbers become relationships.**
+**GIANT: Where culture meets computation, and numbers become relationships.**

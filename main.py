@@ -1,4 +1,4 @@
-"""YHWH Language REPL: Interactive programming environment."""
+"""GIANT Language REPL: Interactive programming environment."""
 
 import sys
 from syntax_loader import SyntaxLoader
@@ -28,7 +28,7 @@ def run_file(filename: str) -> None:
 
 
 def run_repl() -> None:
-    """Run interactive Read-Eval-Print Loop for YHWH Language."""
+    """Run interactive Read-Eval-Print Loop for GIANT Language."""
     syntax_loader = SyntaxLoader()
     parser = Parser(syntax_loader)
     interpreter = Interpreter()

@@ -1,4 +1,4 @@
-"""Token Definitions: Token classes for the YHWH programming language."""
+"""Token Definitions: Token classes for the GIANT programming language."""
 
 from typing import Any
 

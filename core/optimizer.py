@@ -1,5 +1,5 @@
 """
-YHWH Language - Optimization Engine
+GIANT Language - Optimization Engine
 Genesis 1:1 - In the beginning...
 
 Multi-objective optimization for relational decision-making.

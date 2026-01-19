@@ -1,8 +1,8 @@
-talk "=== YHWH Language Comprehensive Test ==="
+talk "=== GIANT Language Comprehensive Test ==="
 talk ""
 
 talk "1. Testing Basic Output"
-talk "Hello from YHWH Language!"
+talk "Hello from GIANT Language!"
 talk ""
 
 talk "2. Testing Variable Assignments"
@@ -55,7 +55,7 @@ talk 100 over 4
 talk ""
 
 talk "5. Testing String Variables"
-make greeting be "Welcome to YHWH!"
+make greeting be "Welcome to GIANT!"
 talk greeting
 
 make name be "Developer"

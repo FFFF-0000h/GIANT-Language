@@ -1,7 +1,7 @@
 """
-Abstract Syntax Tree nodes for YHWH Language with relational extensions
+Abstract Syntax Tree nodes for GIANT Language with relational extensions
 
-This module contains ALL AST nodes for the YHWH Language:
+This module contains ALL AST nodes for the GIANT Language:
 - Legacy Pidgin nodes (BinOp, Assign, Print, etc.)
 - Relational extensions (Anchors, Relations, When-clauses)
 - Optimization directives for multi-objective decision making

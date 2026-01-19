@@ -29,7 +29,7 @@ except ImportError:
 
 class Interpreter:
     """
-    Unified interpreter for YHWH Language supporting both Pidgin and Relational paradigms.
+    Unified interpreter for GIANT Language supporting both Pidgin and Relational paradigms.
     
     Architecture:
         - Pidgin: Traditional variable assignments, control flow

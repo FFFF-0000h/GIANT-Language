@@ -90,7 +90,7 @@ Exceptions:
 
 # Version info
 __version__ = "0.1.0"
-__author__ = "YHWH Language Team"
+__author__ = "GIANT Language Team"
 
 # Core types
 from .types import (

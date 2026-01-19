@@ -1,5 +1,5 @@
 """
-YHWH Language - Relational Programming Exceptions
+GIANT Language - Relational Programming Exceptions
 Genesis 1:1 - In the beginning...
 
 Custom exceptions for relational programming constructs.

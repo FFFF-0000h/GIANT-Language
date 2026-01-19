@@ -1,5 +1,5 @@
 """
-YHWH Language - Core Type Definitions
+GIANT Language - Core Type Definitions
 Genesis 1:1 - In the beginning...
 
 Enums and type definitions for relational programming.
