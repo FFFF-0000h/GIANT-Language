@@ -1,4 +1,4 @@
-# YHWH-GIANT Language
+# GIANT Language
 
 **Generalized Intelligent Anchor-based Notation & Types**
 
@@ -8,7 +8,7 @@ A relational programming language rooted in Nigerian Indigenous mathematical phi
 
 ## Overview
 
-YHWH-GIANT (pronounced "Giant"; YHWH comments out as it is unpronouncable) is a programming paradigm that fundamentally reframes how we think about numbers and computation—from absolute quantities to contextual relationships.
+GIANT (pronounced "Giant"; GIANT comments out as it is unpronouncable) is a programming paradigm that fundamentally reframes how we think about numbers and computation—from absolute quantities to contextual relationships.
 
 ### The Paradigm Shift
 
@@ -20,7 +20,7 @@ if temperature > 100:
 ```
 The code knows `92 < 100` but understands nothing about what this relationship *means*.
 
-**YHWH-GIANT (Relational):**
+**GIANT (Relational):**
 ```naija
 @anchor danger_threshold = 100
 @anchor optimal_temp = 75
